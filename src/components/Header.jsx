@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { authContext } from "../Providers/AuthProvider";
+import auth from "../firebase/firebase.config";
 
 
 const Header = () => {
@@ -9,6 +12,11 @@ const Header = () => {
         <li><NavLink to="/myList">My List</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
     </>
+    const { user,logoutUser,setLoader } = useContext(authContext)
+    const logoutHandler=()=>{
+        logoutUser(auth)
+        setLoader(false)
+    }
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -29,7 +37,16 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Login</a>
+                    {user ? <div className="">
+
+                        <div className="dropdown dropdown-end dropdown-hover">
+                            <div tabIndex={0} className=" m-1"><img className="md:w-[50px] md:h-[50px] w-[30px] h-[30px] object-cover rounded-full" src={user?.photoURL}></img></div>
+                            <ul tabIndex={0} className="dropdown-content z-[10]  menu p-2 shadow bg-base-100 rounded-box w-52">
+                                <li><a>{user?.displayName}</a></li>
+                                <li><button onClick={logoutHandler} className="btn bg-slate-500">Logout</button></li>
+                            </ul>
+                        </div>
+                    </div> : <Link to="/login" className="btn">Login</Link>}
                 </div>
             </div>
         </div>

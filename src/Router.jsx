@@ -10,6 +10,7 @@ import MyList from "./Pages/MyList";
 import Login from "./Pages/Login";
 import Registeter from "./Pages/Registeter";
 import PrivetRoute from "./Providers/PrivetRoute";
+import SpotDetails from "./components/SpotDetails";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
                 path: "/allTouristsSpot",
                 element: <AllTouristsSpot></AllTouristsSpot>,
                 loader:()=>fetch("http://localhost:5000/tourists")
+            },
+            {
+                path: "/spotDetails/:_id",
+                element: <SpotDetails></SpotDetails>,
+                loader:({params})=>fetch(`http://localhost:5000/tourists/${params._id}`)
             },
             {
                 path: "/myList",

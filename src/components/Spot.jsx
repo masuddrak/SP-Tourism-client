@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Spot = ({ spot }) => {
-    const { image, tourists_spot_name, average_cost, totaVisitorsPerYear, travel_time, seasonality } = spot
+    const { _id,image, tourists_spot_name, average_cost, totaVisitorsPerYear, travel_time, seasonality } = spot
+    // console.log(parseInt(average_cost),average_cost)
     return (
         <div>
             <div className="card  bg-base-100 shadow-xl">
@@ -15,7 +17,7 @@ const Spot = ({ spot }) => {
                         <p>Seasonality: {seasonality}</p>
                     </div>
                     <div className="card-actions ">
-                        <button className="btn btn-primary">View Details</button>
+                        <Link to={`/spotDetails/${_id}`} className="btn btn-primary">View Details</Link>
                     </div>
                 </div>
             </div>

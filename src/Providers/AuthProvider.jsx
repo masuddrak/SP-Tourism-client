@@ -10,6 +10,8 @@ export const authContext = createContext(null)
 const AuthProvider = ({ children }) => {
     const [loader, setLoader] = useState(true)
     const [user, setUser] = useState(null)
+     // loader
+     
     // create user
     const gooleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -50,12 +52,10 @@ const AuthProvider = ({ children }) => {
 
     }, [])
 
-    // loader
-    if (loader) {
-        return <h1 className="text-4xl">Loading....</h1>
-    }
+   
     console.log(user)
     const authInfo = { loader, setLoader, user, createUser, loginUser, logoutUser, createGooleUser, createGithubUser }
+    
     return (
         <authContext.Provider value={authInfo}>
             {children}

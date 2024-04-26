@@ -7,7 +7,7 @@ const Login = () => {
     const location = useLocation()
     const naviget = useNavigate()
     console.log(location)
-    const { loginUser, createGooleUser, createGithubUser } = useContext(authContext)
+    const {loginUser, createGooleUser, createGithubUser } = useContext(authContext)
     const {
         register,
         handleSubmit,
@@ -20,7 +20,6 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 console.log(result.user)
-
                 naviget(location?.state ? location.state : "/")
                 return toast.success("login Success!!")
             })

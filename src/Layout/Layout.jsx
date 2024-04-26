@@ -6,8 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Layout = () => {
     return (
-        <div >
-            <div className="w-4/5 mx-auto">
+        <div className="mx-3">
+            <div className="md:container mx-auto">
                 <Header></Header>
                 <Outlet></Outlet>
             </div>

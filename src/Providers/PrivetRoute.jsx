@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 import { authContext } from "./AuthProvider";
 
 const PrivetRoute = ({children}) => {
-    const { user,  } = useContext(authContext)
+    const { user, loader } = useContext(authContext)
     const location = useLocation()
-    console.log(location)
-    // if (setLoader) {
-    //     return <div className="min-h-[70vh] flex justify-center items-center">
-    //         <h1 className="text-5xl">loading....</h1>
-    //     </div>
-    // }
+    // console.log(location)
+    if (loader) {
+        return <div className="min-h-[70vh] flex justify-center items-center">
+            <h1 className="text-5xl">loading....</h1>
+        </div>
+    }
     if (user) {
         return children
     }

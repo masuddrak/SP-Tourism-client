@@ -1,10 +1,20 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../Providers/AuthProvider";
 import auth from "../firebase/firebase.config";
+import { MdDarkMode } from "react-icons/md";
+import { CiDark } from "react-icons/ci";
 
 
 const Header = () => {
+    const [theme, setTheme] = useState('light');
+    const toggleTheme = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+    };
+    // initially set the theme and "listen" for changes to apply them to the HTML tag
+    useEffect(() => {
+        document.querySelector('html').setAttribute('data-theme', theme);
+    }, [theme]);
     const navlinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/allTouristsSpot">All Tourists Spot</NavLink></li>
@@ -12,8 +22,8 @@ const Header = () => {
         <li><NavLink to="/myList">My List</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
     </>
-    const { user,logoutUser,setLoader } = useContext(authContext)
-    const logoutHandler=()=>{
+    const { user, logoutUser, setLoader } = useContext(authContext)
+    const logoutHandler = () => {
         logoutUser(auth)
         setLoader(false)
     }
@@ -37,6 +47,15 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end ">
+                    {/* themset */}
+                    <label className="swap swap-rotate">
+                        <input onClick={toggleTheme} type="checkbox" />
+                        <div className="swap-on text-3xl"><CiDark></CiDark></div>
+                        <div className="swap-off text-3xl"><MdDarkMode></MdDarkMode></div>
+                    </label>
+
+                    {/* themset */}
+
                     {user ? <div className="z-20">
 
                         <div className="dropdown dropdown-end dropdown-hover">

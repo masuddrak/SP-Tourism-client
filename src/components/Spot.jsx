@@ -6,7 +6,7 @@ const Spot = ({ spot }) => {
     // console.log(parseInt(average_cost),average_cost)
     return (
         <div>
-            <div className="card  bg-base-100 shadow-xl">
+            <div className="card  bg-base-100 shadow-sm">
                 <figure><img src={image} alt="cox bazzar" /></figure>
                 <div className="p-2 space-y-2">
                     <h2 className="card-title">{tourists_spot_name}</h2>

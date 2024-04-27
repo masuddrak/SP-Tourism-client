@@ -2,19 +2,21 @@ import { useContext, useEffect, useState } from "react";
 import { authContext } from "../Providers/AuthProvider";
 import useQueryTanstack from "../Hooks/useQueryTanstack";
 import Swal from 'sweetalert2'
+import { Link } from "react-router-dom";
+
 const MyList = () => {
-    const { refetch,data } = useQueryTanstack()
+    const { refetch, data } = useQueryTanstack()
     const { user } = useContext(authContext)
     const [tourists, setTourist] = useState([])
-    console.log(user.email)
+
     useEffect(() => {
         fetch(`http://localhost:5000/tourists/${user.email}`)
             .then(res => res.json())
             .then(data => {
-             
+
                 setTourist(data)
             })
-    }, [user,data])
+    }, [user, data])
     const handelDeletePlace = (_id) => {
 
         Swal.fire({
@@ -46,6 +48,9 @@ const MyList = () => {
         });
 
     }
+    
+
+
     return (
         <div>
             <div className="overflow-x-auto">
@@ -78,7 +83,7 @@ const MyList = () => {
                                 <td>Purple</td>
                                 <th className="space-x-2">
                                     <button onClick={() => handelDeletePlace(tourist._id)} className="px-3 py-1 bg-warning">Delete</button>
-                                    <button className="px-3 py-1 bg-success">Update</button>
+                                    <Link to={`/udatePlace/${tourist._id}`} className="px-3 py-1 bg-success">Update</Link>
                                 </th>
                             </tr>)
                         }

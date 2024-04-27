@@ -12,6 +12,7 @@ import Registeter from "./Pages/Registeter";
 import PrivetRoute from "./Providers/PrivetRoute";
 import SpotDetails from "./components/SpotDetails";
 import CountryPlaces from "./components/CountryPlaces";
+import UpdatePlace from "./components/UpdatePlace";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -33,12 +34,17 @@ const router = createBrowserRouter([
             {
                 path: "/spotDetails/:_id",
                 element: <SpotDetails></SpotDetails>,
-                loader:({params})=>fetch(`http://localhost:5000/tourists/${params._id}`)
+                loader:({params})=>fetch(`http://localhost:5000/touristsDetails/${params._id}`)
             },
             {
-                path: "/countryPlace/:country",
+                path: "/udatePlace/:_id",
+                element: <UpdatePlace></UpdatePlace>,
+                loader:({params})=>fetch(`http://localhost:5000/touristsDetails/${params._id}`)
+            },
+            {
+                path: "/tourists/:country",
                 element: <CountryPlaces></CountryPlaces>,
-                loader:({params})=>fetch(`http://localhost:5000/tourists/${params.country}`)
+                loader:({params})=>fetch(`http://localhost:5000/countryplace/${params.country}`)
             },
             {
                 path: "/myList",

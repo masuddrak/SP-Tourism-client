@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 
 const useQueryTanstack = () => {
-    const { isLoading,data,refetch  }  = useQuery({
+    const { isLoading,data,refetch }  = useQuery({
         queryKey: ["tourists"],
         queryFn: async()=>{
             const res=await fetch("http://localhost:5000/tourists")

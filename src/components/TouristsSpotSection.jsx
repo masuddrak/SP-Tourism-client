@@ -7,7 +7,7 @@ const TouristsSpotSection = () => {
         fetch("http://localhost:5000/tourists")
         .then(res=>res.json())
         .then(data=>{
-            const sliceData=data.slice(0,5)
+            const sliceData=data.slice(0,6)
             setTourist(sliceData)
         })
     },[])

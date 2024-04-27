@@ -2,8 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../Providers/AuthProvider";
 import auth from "../firebase/firebase.config";
-import { MdDarkMode } from "react-icons/md";
-import { CiDark } from "react-icons/ci";
+import { TiStarburst } from "react-icons/ti";
+import { TiStarburstOutline } from "react-icons/ti";
+
 
 
 const Header = () => {
@@ -46,12 +47,12 @@ const Header = () => {
                         {navlinks}
                     </ul>
                 </div>
-                <div className="navbar-end ">
+                <div className="navbar-end flex items-center">
                     {/* themset */}
                     <label className="swap swap-rotate">
                         <input onClick={toggleTheme} type="checkbox" />
-                        <div className="swap-on text-3xl"><CiDark></CiDark></div>
-                        <div className="swap-off text-3xl"><MdDarkMode></MdDarkMode></div>
+                        <div className="swap-on text-3xl"><TiStarburstOutline></TiStarburstOutline></div>
+                        <div className="swap-off text-3xl"><TiStarburst></TiStarburst> </div>
                     </label>
 
                     {/* themset */}
@@ -59,7 +60,7 @@ const Header = () => {
                     {user ? <div className="z-20">
 
                         <div className="dropdown dropdown-end dropdown-hover">
-                            <div tabIndex={0} className=" m-1"><img className="md:w-[50px] md:h-[50px] w-[30px] h-[30px] object-cover rounded-full" src={user?.photoURL}></img></div>
+                            <div tabIndex={0} className=" m-1"><img className="md:w-[30px] md:h-[30px] w-[20px] h-[20px] object-cover rounded-full" src={user?.photoURL}></img></div>
                             <ul tabIndex={0} className="dropdown-content z-[10]  menu p-2 shadow bg-base-100 rounded-box w-52">
                                 <li><a>{user?.displayName}</a></li>
                                 <li><button onClick={logoutHandler} className="btn bg-slate-500">Logout</button></li>

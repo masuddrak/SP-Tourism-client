@@ -47,7 +47,7 @@ const Header = () => {
                         {navlinks}
                     </ul>
                 </div>
-                <div className="navbar-end flex items-center">
+                <div className="navbar-end flex items-center gap-3">
                     {/* themset */}
                     <label className="swap swap-rotate">
                         <input onClick={toggleTheme} type="checkbox" />
@@ -66,7 +66,11 @@ const Header = () => {
                                 <li><button onClick={logoutHandler} className="btn bg-slate-500">Logout</button></li>
                             </ul>
                         </div>
-                    </div> : <Link to="/login" className="btn">Login</Link>}
+                    </div> : <div className="flex gap-3 items-center">
+                        <Link to="/login" className="">Login</Link>
+                        <div className="border border-1 h-2"></div>
+                        <Link to="/register" className="bn">Register</Link>
+                    </div>}
                 </div>
             </div>
         </div>

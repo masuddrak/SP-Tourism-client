@@ -10,7 +10,9 @@ const AllTouristsSpot = () => {
     const { isLoading, refetch, data } = useQueryTanstack()
 
     if (isLoading) {
-        return <h1 className="text-7xl">Loading</h1>
+        return <div className="min-h-[70vh] flex justify-center items-center">
+            <h1 className="text-5xl"><span className="loading loading-ring loading-lg"></span></h1>
+        </div>
     }
     const handelSort = (searchData) => {
         if (searchData == "asending") {
@@ -32,9 +34,9 @@ const AllTouristsSpot = () => {
                     <details className="dropdown ">
                         <summary className="m-1  btn btn-primary text-white">Sort By <IoIosArrowDown></IoIosArrowDown></summary>
                         <ul className="p-2 shadow menu dropdown-content z-[1] bg-green-300 rounded-box w-52">
-                            <li onClick={() =>handelSort("asending")}><a>asending</a></li>
-                            <li onClick={() =>handelSort2("desending")}><a>desending</a></li>
-                            
+                            <li onClick={() => handelSort("asending")}><a>asending</a></li>
+                            <li onClick={() => handelSort2("desending")}><a>desending</a></li>
+
                         </ul>
                     </details>
 

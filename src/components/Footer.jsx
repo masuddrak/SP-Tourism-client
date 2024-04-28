@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { FaLinkedin } from "react-icons/fa6";
+import { ImFacebook2 } from "react-icons/im";
 
 
 const Footer = () => {
@@ -19,16 +21,17 @@ const Footer = () => {
                 <nav>
                     <h6 className="footer-title">Company</h6>
                     <a className="link link-hover">Home</a>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Update Profile</a>
-                    <a className="link link-hover">User Profile</a>
+                    <a className="link link-hover">All Tourists Spot</a>
+                    <a className="link link-hover">Add Tourists Spot</a>
+                    <a className="link link-hover">My List</a>
                 </nav>
                 <nav>
-                    <h6 className="footer-title">Legal</h6>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <h6 className="footer-title">Contact Info</h6>
+                    <a className="link link-hover">Email:masudranaacb@gmail.com</a>
+                    <div className="flex gap-2 text-xl">
+                        <a href="https://www.linkedin.com/in/masud-rana-98120923a/" className="link link-hover"><FaLinkedin></FaLinkedin></a>
+                        <a href="https://www.facebook.com/mr864651" className="link link-hover"><ImFacebook2></ImFacebook2></a>
+                    </div>
                 </nav>
             </footer>
             {/* <hr className="text-gray-500  "></hr> */}

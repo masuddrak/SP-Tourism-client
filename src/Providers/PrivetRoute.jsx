@@ -10,7 +10,7 @@ const PrivetRoute = ({children}) => {
     // console.log(location)
     if (loader) {
         return <div className="min-h-[70vh] flex justify-center items-center">
-            <h1 className="text-5xl">loading....</h1>
+            <h1 className="text-5xl"><span className="loading loading-ring loading-lg"></span></h1>
         </div>
     }
     if (user) {

@@ -13,10 +13,12 @@ import PrivetRoute from "./Providers/PrivetRoute";
 import SpotDetails from "./components/SpotDetails";
 import CountryPlaces from "./components/CountryPlaces";
 import UpdatePlace from "./components/UpdatePlace";
+import NotFount from "./Pages/NotFount";
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout></Layout>,
+        errorElement:<NotFount></NotFount>,
         children: [
             {
                 path: "/",
@@ -33,12 +35,12 @@ const router = createBrowserRouter([
             },
             {
                 path: "/spotDetails/:_id",
-                element: <SpotDetails></SpotDetails>,
+                element: <PrivetRoute><SpotDetails></SpotDetails></PrivetRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/touristsDetails/${params._id}`)
             },
             {
                 path: "/udatePlace/:_id",
-                element: <UpdatePlace></UpdatePlace>,
+                element:<PrivetRoute><UpdatePlace></UpdatePlace></PrivetRoute> ,
                 loader:({params})=>fetch(`http://localhost:5000/touristsDetails/${params._id}`)
             },
             {

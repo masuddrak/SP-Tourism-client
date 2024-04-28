@@ -4,7 +4,7 @@ import Spot from "./Spot";
 const TouristsSpotSection = () => {
     const [tourists,setTourist]=useState([])
     useEffect(()=>{
-        fetch("http://localhost:5000/tourists")
+        fetch("https://sp-tourists-spot-server.vercel.app/tourists")
         .then(res=>res.json())
         .then(data=>{
             const sliceData=data.slice(0,6)

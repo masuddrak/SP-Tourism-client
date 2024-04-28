@@ -9,7 +9,7 @@ const AddTouristsSpot = () => {
     const AddTouristsSpot = (data) => {
 
         console.log(data)
-        fetch("http://localhost:5000/tourists", {
+        fetch("https://sp-tourists-spot-server.vercel.app/tourists", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)

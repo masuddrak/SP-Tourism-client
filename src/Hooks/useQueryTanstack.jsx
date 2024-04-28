@@ -5,7 +5,7 @@ const useQueryTanstack = () => {
     const { isLoading,data,refetch }  = useQuery({
         queryKey: ["tourists"],
         queryFn: async()=>{
-            const res=await fetch("http://localhost:5000/tourists")
+            const res=await fetch("https://sp-tourists-spot-server.vercel.app/tourists")
             const data=await res.json()
             return data
         }

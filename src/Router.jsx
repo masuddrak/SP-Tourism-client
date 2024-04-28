@@ -31,22 +31,22 @@ const router = createBrowserRouter([
             {
                 path: "/allTouristsSpot",
                 element: <AllTouristsSpot></AllTouristsSpot>,
-                loader:()=>fetch("http://localhost:5000/tourists")
+                loader:()=>fetch("https://sp-tourists-spot-server.vercel.app/tourists")
             },
             {
                 path: "/spotDetails/:_id",
                 element: <PrivetRoute><SpotDetails></SpotDetails></PrivetRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/touristsDetails/${params._id}`)
+                loader:({params})=>fetch(`https://sp-tourists-spot-server.vercel.app/touristsDetails/${params._id}`)
             },
             {
                 path: "/udatePlace/:_id",
                 element:<PrivetRoute><UpdatePlace></UpdatePlace></PrivetRoute> ,
-                loader:({params})=>fetch(`http://localhost:5000/touristsDetails/${params._id}`)
+                loader:({params})=>fetch(`https://sp-tourists-spot-server.vercel.app/touristsDetails/${params._id}`)
             },
             {
                 path: "/tourists/:country",
                 element: <CountryPlaces></CountryPlaces>,
-                loader:({params})=>fetch(`http://localhost:5000/countryplace/${params.country}`)
+                loader:({params})=>fetch(`https://sp-tourists-spot-server.vercel.app/countryplace/${params.country}`)
             },
             {
                 path: "/myList",

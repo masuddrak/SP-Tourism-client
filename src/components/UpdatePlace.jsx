@@ -15,7 +15,7 @@ const UpdatePlace = () => {
     const AddTouristsSpot = (data) => {
 
         console.log(data)
-        fetch(`http://localhost:5000/touristsUpdate/${_id}`, {
+        fetch(`https://sp-tourists-spot-server.vercel.app/touristsUpdate/${_id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)

@@ -10,7 +10,7 @@ const MyList = () => {
     const [tourists, setTourist] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tourists/${user.email}`)
+        fetch(`https://sp-tourists-spot-server.vercel.app/tourists/${user.email}`)
             .then(res => res.json())
             .then(data => {
 
@@ -31,7 +31,7 @@ const MyList = () => {
 
 
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/tourists/${_id}`, {
+                fetch(`https://sp-tourists-spot-server.vercel.app/tourists/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -58,9 +58,9 @@ const MyList = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Image</th>
+                            <th>Spot Name</th>
+                            <th>Country</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -70,9 +70,9 @@ const MyList = () => {
                             tourists.map(tourist => <tr key={tourist._id}>
                                 <td>
                                     <div className="flex items-center gap-3">
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+                                        <div className="avatar ">
+                                            <div className="mask rounded-md w-12 h-12">
+                                                <img src={tourist.image} alt="Avatar  Tailwind CSS Component" />
                                             </div>
                                         </div>
                                     </div>
@@ -80,7 +80,7 @@ const MyList = () => {
                                 <td>
                                     <span >{tourist.tourists_spot_name}</span>
                                 </td>
-                                <td>Purple</td>
+                                <td>{tourist.country_Name}</td>
                                 <th className="space-x-2">
                                     <button onClick={() => handelDeletePlace(tourist._id)} className="px-3 py-1 bg-warning">Delete</button>
                                     <Link to={`/udatePlace/${tourist._id}`} className="px-3 py-1 bg-success">Update</Link>

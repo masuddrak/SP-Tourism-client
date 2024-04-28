@@ -8,15 +8,6 @@ const AddTouristsSpot = () => {
     } = useForm()
     const AddTouristsSpot = (data) => {
 
-        // const image = data.image
-        // const tourists_spot_name = data.tourists_spot_name
-        // const country_Name = data.country_Name
-        // const location = data.location
-        // const description = data.description
-        // const average_cost = data.average_cost
-        // const seasonality = data.seasonality
-        // const travel_time = data.travel_time
-        // const totaVisitorsPerYear = data.totaVisitorsPerYear
         console.log(data)
         fetch("http://localhost:5000/tourists", {
             method: "POST",

@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'sans': ['Playfair Display', 'serif']
+    }
   },
   daisyui: {
     themes: ['light', 'dark'],

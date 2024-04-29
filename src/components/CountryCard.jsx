@@ -11,7 +11,7 @@ const CountryCard = ({placeData}) => {
     return (
         <div>
             <div className="card  bg-base-100 shadow-sm">
-                <figure><img src={image} alt="cox bazzar" className='w-full h-full' /></figure>
+                <figure><img src={image} alt="cox bazzar" className='w-full w-full h-[200px]  md:h-[250px]' /></figure>
                 <div className="p-2 space-y-2">
                     <h2 className="card-title">{tourists_spot_name}</h2>
                     <div className='grid grid-cols-2 gap-3'>

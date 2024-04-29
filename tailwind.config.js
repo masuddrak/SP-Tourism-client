@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      'sans': ['Playfair Display', 'serif']
+      'sans': ['Playfair Display', 'serif'],
+      'body': ["Open Sans"]
     }
   },
   daisyui: {

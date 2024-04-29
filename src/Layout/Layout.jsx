@@ -7,7 +7,7 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 const Layout = () => {
     return (
-        <div className="font-sans">
+        <div className="">
             <div className="mx-3">
                 <Header></Header>
                 <Outlet></Outlet>

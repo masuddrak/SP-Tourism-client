@@ -1,4 +1,5 @@
 import { Fade } from "react-awesome-reveal";
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 
 const SpotDetails = () => {
@@ -26,6 +27,7 @@ const SpotDetails = () => {
                 <div className="mt-5">
                     <p>{description}</p>
                 </div>
+                <Helmet> <title>{tourists_spot_name} Spot</title></Helmet>
             </div>
         </Fade>
     );

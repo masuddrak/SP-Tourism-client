@@ -3,6 +3,7 @@ import { authContext } from "../Providers/AuthProvider";
 import useQueryTanstack from "../Hooks/useQueryTanstack";
 import Swal from 'sweetalert2'
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const MyList = () => {
     const { refetch, data } = useQueryTanstack()
@@ -53,6 +54,7 @@ const MyList = () => {
 
     return (
         <div>
+            <Helmet> <title>My List</title></Helmet>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

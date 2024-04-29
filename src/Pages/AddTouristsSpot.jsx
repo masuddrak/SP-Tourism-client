@@ -1,7 +1,11 @@
+
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
+
 const AddTouristsSpot = () => {
+    
     const {
         register,
         handleSubmit,
@@ -25,6 +29,7 @@ const AddTouristsSpot = () => {
     return (
         <div className="flex justify-center min-h-[50vh] mt-10">
             <div className="w-full  lg:max-w-2xl p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800 bg-gray-600 text-white">
+            <Helmet> <title>Add Tourists Spot</title></Helmet>
                 <h1 className="text-2xl font-bold text-center">Add Tourists Spot</h1>
                 <form onSubmit={handleSubmit(AddTouristsSpot)} className="space-y-6  ">
                     <div className="grid md:grid-cols-2 gap-4">

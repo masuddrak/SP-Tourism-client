@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import CountryCard from "./CountryCard";
 import { Fade } from 'react-awesome-reveal';
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
+import { Helmet } from "react-helmet";
 
 const CountryPlaces = () => {
     const loaderData = useLoaderData()
@@ -28,6 +29,7 @@ const CountryPlaces = () => {
                 {
                     loaderData.map(placeData => <CountryCard key={placeData._id} placeData={placeData}></CountryCard>)
                 }
+                <Helmet> <title>Your Country place!</title></Helmet>
             </div>
         </div>
 

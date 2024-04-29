@@ -3,6 +3,7 @@ import Spot from "../components/Spot";
 import { useState } from "react";
 import useQueryTanstack from "../Hooks/useQueryTanstack";
 import { IoIosArrowDown } from "react-icons/io";
+import { Helmet } from "react-helmet";
 
 const AllTouristsSpot = () => {
     const loaderData = useLoaderData()
@@ -28,14 +29,15 @@ const AllTouristsSpot = () => {
     }
     return (
         <div>
+            <Helmet> <title>All tourists  Place</title></Helmet>
             <div className="flex justify-between">
                 <h1 className="text-3xl">All tourists  Place </h1>
                 <div>
                     <details className="dropdown ">
                         <summary className="m-1  btn btn-primary text-white">Sort By <IoIosArrowDown></IoIosArrowDown></summary>
                         <ul className="p-2 shadow menu dropdown-content z-[1] bg-green-300 rounded-box w-52">
-                            <li onClick={() => handelSort("asending")}><a>asending</a></li>
-                            <li onClick={() => handelSort2("desending")}><a>desending</a></li>
+                            <li onClick={() => handelSort("asending")}><a>ascending</a></li>
+                            <li onClick={() => handelSort2("desending")}><a>descending</a></li>
 
                         </ul>
                     </details>

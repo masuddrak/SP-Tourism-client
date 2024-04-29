@@ -13,8 +13,8 @@ const Spot = ({ spot }) => {
                 anchorSelect="#my-anchor-element"
                 content={country_Name}
             />
-            <div className="card w-full h-full  bg-base-100 shadow-sm">
-                <figure><img src={image}  className='w-full h-full' alt="cox bazzar" /></figure>
+            <div className="card w-full  bg-base-100 shadow-sm pb-3">
+                <figure><img src={image}  className='w-full h-[200px]  md:h-[250px]' alt="cox bazzar" /></figure>
                 <div className="p-2 space-y-2">
                     <h2 className="card-title">{tourists_spot_name}</h2>
                     <div className='grid grid-cols-2 gap-3'>

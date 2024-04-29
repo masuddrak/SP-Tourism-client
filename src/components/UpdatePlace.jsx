@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 const UpdatePlace = () => {
     const loaderData = useLoaderData()
    
-    const { _id, image, tourists_spot_name, country_Name, location, description, average_cost, seasonality, travel_time, totaVisitorsPerYear} = loaderData
+    const { _id, image, tourists_spot_name, country_Name, location, description, average_cost, seasonality, travel_time, totaVisitorsPerYear,name,email} = loaderData
 
     const {
         register,
@@ -16,7 +16,7 @@ const UpdatePlace = () => {
 
         console.log(data)
         fetch(`https://sp-tourists-spot-server.vercel.app/touristsUpdate/${_id}`, {
-            method: "PUT",
+            method: "PATCH",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)
         })
@@ -82,6 +82,14 @@ const UpdatePlace = () => {
                         <div className="space-y-1 text-sm">
                             <label htmlFor="totaVisitorsPerYear" className="block dark:text-gray-600">TotaVisitorsPerYear</label>
                             <input type="number" {...register("totaVisitorsPerYear")} defaultValue={totaVisitorsPerYear} placeholder="TotaVisitorsPerYear" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                        </div>
+                        <div className="space-y-1 text-sm hidden">
+                            <label htmlFor="name" className="block dark:text-gray-600">User Name</label>
+                            <input type="text" {...register("name")} defaultValue={name} placeholder="User Name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                        </div>
+                        <div className="space-y-1 text-sm hidden">
+                            <label htmlFor="email" className="block dark:text-gray-600">User Email</label>
+                            <input type="email" {...register("email")} defaultValue={email} required placeholder="User Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
                         </div>
                     </div>
 

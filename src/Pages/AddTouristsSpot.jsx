@@ -35,11 +35,11 @@ const AddTouristsSpot = () => {
                     <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-1 text-sm">
                             <label htmlFor="name" className="block dark:text-gray-600">Image</label>
-                            <input type="url" {...register("image")} placeholder="image" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                            <input type="url" {...register("image")} placeholder="image" required className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="name" className="block dark:text-gray-600">Tourists Spot Name</label>
-                            <input type="text" {...register("tourists_spot_name")} placeholder="tourists_spot_name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                            <input type="text" {...register("tourists_spot_name")} required placeholder="tourists_spot_name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
                         </div>
                         {/* <div className="space-y-1 text-sm">
                             <label htmlFor="country_Name" className="block dark:text-gray-600">Country Name</label>
@@ -48,7 +48,7 @@ const AddTouristsSpot = () => {
                         {/*  */}
                         <div>
                             <label htmlFor="name" className="block dark:text-gray-600">Country</label>
-                            <select {...register("country_Name")} className="w-full px-4 py-3 rounded-md dark:border-gray-300 bg-gray-50 text-gray-800 focus:dark:border-violet-600" >
+                            <select {...register("country_Name")} required className="w-full px-4 py-3 rounded-md dark:border-gray-300 bg-gray-50 text-gray-800 focus:dark:border-violet-600" >
                                 <option value="Bangladesh">Bangladesh</option>
                                 <option value="Thailand">Thailand</option>
                                 <option value="Indonesia">Indonesia</option>
@@ -60,35 +60,35 @@ const AddTouristsSpot = () => {
                         {/*  */}
                         <div className="space-y-1 text-sm">
                             <label htmlFor="location" className="block dark:text-gray-600">location</label>
-                            <input type="text" {...register("location")} placeholder="location" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                            <input type="text" {...register("location")} required placeholder="location" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="description" className="block dark:text-gray-600">short description</label>
-                            <input type="text" {...register("description")} placeholder="description" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                            <input type="text" {...register("description")} required placeholder="description" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="average_cost" className="block dark:text-gray-600">average_cost</label>
-                            <input type="number" {...register("average_cost")} placeholder="average_cost" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                            <input type="number" {...register("average_cost")} required placeholder="average_cost" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="seasonality" className="block dark:text-gray-600">seasonality</label>
-                            <input type="text" {...register("seasonality")} placeholder="seasonality" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                            <input type="text" {...register("seasonality")} required placeholder="seasonality" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="travel_time" className="block dark:text-gray-600">Travel_time</label>
-                            <input type="number" {...register("travel_time")} placeholder="Travel_time" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                            <input type="number" {...register("travel_time")} required placeholder="Travel_time" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="totaVisitorsPerYear" className="block dark:text-gray-600">TotaVisitorsPerYear</label>
-                            <input type="number" {...register("totaVisitorsPerYear")} placeholder="TotaVisitorsPerYear" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                            <input type="number" {...register("totaVisitorsPerYear")} required placeholder="TotaVisitorsPerYear" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="name" className="block dark:text-gray-600">User Name</label>
-                            <input type="text" {...register("name")} placeholder="User Name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                            <input type="text" {...register("name")} required placeholder="User Name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="email" className="block dark:text-gray-600">User Email</label>
-                            <input type="email" {...register("email")} placeholder="User Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
+                            <input type="email" {...register("email")} required placeholder="User Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-gray-800 focus:dark:border-violet-600" />
                         </div>
 
                     </div>
